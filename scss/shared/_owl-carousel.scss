@@ -1,0 +1,22 @@
+.owl-carousel__item img {
+    width: 150px;
+    height: 400px;
+    object-fit: cover;
+    object-position: top center;
+    border: 1px solid $bordes;
+    padding: 4px;
+    box-sizing: border-box;
+    @include escritorio () {
+        height: 400px;
+    }
+}
+
+.owl-next {
+    @include flecha-carousel();
+    right: 0;
+}
+
+.owl-prev {
+    @include flecha-carousel();
+    left: 0;
+}

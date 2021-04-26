@@ -1,0 +1,58 @@
+body {
+    overflow: hidden;
+    &.loaded {
+        overflow: auto;
+    }
+}
+
+.loading {
+    position: fixed;
+    z-index: 3000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .section {
+        position: fixed;
+        top: 0;
+        height: 100%;
+        width: 51%;
+        z-index: 3001;
+        background: black;
+        &.left {
+            left: 0;
+        }
+        &.right {
+            right: 0;
+        }
+    }
+    .load {
+        width: 350px;
+        height: 350px;
+        @include background-image('/assets/img/book_preloader.gif');
+        position: fixed;
+        z-index: 3002;
+    }
+}
+
+.loaded {
+    .loading {
+        visibility: hidden;
+        .section {
+            transition: all .8s ease-out;
+            &.left {
+                transform: translateX(-100%);
+            }
+            &.right {
+                transform: translateX(100%);
+            }
+        }
+        load {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,108 @@
+.cabecera {
+    background: black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    .nav {
+        height: 70px;
+        @include escritorio() {
+            max-width: $max-value;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-check {
+            display: none;
+            &:checked~.nav-links {
+                height: calc(100% - 70px);
+            }
+        }
+        .nav-header {
+            display: block;
+            height: 100%;
+            .nav-title {
+                display: inline-block;
+                color: $blanco;
+                padding: 10px;
+                font-size: 22px;
+                height: 100%;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+            }
+            @include escritorio() {
+                display: block;
+                max-width: 300px;
+                width: 100%;
+            }
+        }
+        .nav-btn {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            @include escritorio() {
+                display: none;
+            }
+            label {
+                display: inline-block;
+                width: 70px;
+                height: 70px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                span {
+                    display: block;
+                    width: 25px;
+                    height: 10px;
+                    border-top: 2px solid $blanco;
+                }
+            }
+        }
+        .nav-check:checked~.nav-btn>label {
+            background: $secundario;
+        }
+        .nav-links {
+            background: $secundario;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            height: 0;
+            z-index: 300;
+            overflow: hidden;
+            width: 100%;
+            transition: all 0.3s ease-in;
+            font-size: 18px;
+            @include escritorio() {
+                position: static;
+                height: 70px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                background: $negro;
+            }
+            a {
+                display: block;
+                width: 100%;
+                padding: 13px 10px;
+                color: $blanco;
+                text-decoration: none;
+                &.active {
+                    font-weight: bold;
+                }
+                @include escritorio() {
+                    display: inline-block;
+                    width: unset;
+                    &:hover {
+                        box-sizing: border-box;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}

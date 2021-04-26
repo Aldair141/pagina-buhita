@@ -1,0 +1,66 @@
+.pie {
+    color: $blanco;
+    display: flex;
+    flex-direction: column;
+    .up {
+        background: $negro;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 60px 30px;
+        @include escritorio() {
+            padding: 120px 30px;
+        }
+        .content {
+            @include escritorio() {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        h3 {
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+        }
+        p {
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 0 10px;
+        }
+        form {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            input[type='email'] {
+                height: 50px;
+                width: 100%;
+                font-weight: 300;
+                padding: 15px;
+                box-sizing: border-box;
+                border: 1px solid $blanco;
+                font-size: 16px;
+            }
+            button {
+                width: 50px;
+                height: 50px;
+                padding: 0;
+                background: transparent;
+                color: $negro;
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 16px;
+                border: 0;
+                cursor: pointer;
+            }
+        }
+    }
+    .down {
+        background: $secundario;
+        padding: 20px 30px;
+        p {
+            text-align: center;
+        }
+    }
+}

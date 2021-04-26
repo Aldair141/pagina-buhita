@@ -1,0 +1,21 @@
+.whatsapp {
+    position: fixed;
+    background: $whatsapp;
+    z-index: 200;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $blanco;
+    bottom: 20px;
+    right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 0 10px $blanco;
+    @include escritorio() {
+        width: 40px;
+        height: 40px;
+    }
+}

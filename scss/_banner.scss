@@ -1,0 +1,40 @@
+.banner {
+    @include background-image('/assets/img/liderazgo-libros.webp');
+    width: 100%;
+    height: calc(80vh - 70px);
+    padding: 60px 0;
+    position: relative;
+    @include escritorio() {
+        background-attachment: fixed;
+        height: calc(90vh - 70px);
+    }
+    .capa {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .8);
+        color: $blanco;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .container {
+            width: 90%;
+            h1 {
+                border-left: 1px solid $blanco;
+                padding-left: 20px;
+                font-size: 100px;
+                font-weight: 300;
+                margin-bottom: 30px;
+            }
+            p {
+                font-size: 1.5rem;
+            }
+            @include escritorio() {
+                max-width: $max-value;
+                width: 100%;
+            }
+        }
+    }
+}

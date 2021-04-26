@@ -1,0 +1,59 @@
+@mixin box-sizing($box-style) {
+    box-sizing: $box-style;
+}
+
+@mixin button {
+    background: $rojo;
+    color: $blanco;
+    border: 0;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        color: #fff;
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+}
+
+@mixin flecha-carousel {
+    position: absolute;
+    top: 35%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px!important;
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
+    color: #000!important;
+    background: rgba(255, 255, 255, 0.6)!important;
+    outline: none;
+    &.disabled {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+@mixin background-image ($url) {
+    background: url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+@mixin tablet {
+    @media only screen and (min-width: #{ $tablet }) {
+        @content;
+    }
+}
+
+@mixin escritorio {
+    @media only screen and (min-width: #{ $escritorio }) {
+        @content;
+    }
+}
