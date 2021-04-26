@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap');
+@import '../variables';
+@import '../mixins';
+@import '../shared/shared';
+.main {
+    margin-top: $margin-top;
+}
+
+.title {
+    margin-top: calc(70px + 2rem);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contenedor {
+    max-width: $max-value;
+    margin: 0 auto;
+    padding: 30px;
+    border-top: 1px solid $negro;
+}
+
+.buscador {
+    form {
+        position: relative;
+    }
+    .text-buscador {
+        height: 2.5rem;
+        width: 100%;
+        font-size: 1rem;
+        padding: 0 2.5rem 0 1rem;
+        font-weight: 600;
+    }
+    .btn-buscador {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: none;
+        border: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        cursor: pointer;
+    }
+    .criterio {
+        margin-top: 1rem;
+        border: 1px solid $negro;
+        padding: .5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        .contain {
+            margin-left: .3rem;
+        }
+        i {
+            cursor: pointer;
+            margin-right: .3rem;
+        }
+    }
+}
+
+.libros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .libro_item {
+        text-align: center;
+        flex: 0 1 calc(50% - 1rem);
+        .portada {
+            max-width: 100%;
+        }
+        .detalle {
+            font-size: 85%;
+        }
+        .btn-detalle {
+            @include button();
+            i {
+                margin-right: .3rem;
+            }
+        }
+        margin-bottom: 2rem;
+        @include tablet() {
+            flex: 0 1 calc(33% - 1rem);
+        }
+        @include escritorio() {
+            flex: 0 1 calc(25% - 1rem);
+        }
+        .titulo,
+        .autor,
+        .genero {
+            margin-bottom: .6rem;
+        }
+    }
+}
