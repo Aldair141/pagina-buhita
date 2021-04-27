@@ -100,7 +100,9 @@
             flex-direction: column;
             justify-content: center;
             .btn-download {
-                @include button();
+                @include button($rojo,
+                $blanco,
+                #c82333);
             }
         }
         div {

@@ -75,7 +75,9 @@
             font-size: 85%;
         }
         .btn-detalle {
-            @include button();
+            @include button($rojo,
+            $blanco,
+            #c82333);
             i {
                 margin-right: .3rem;
             }
