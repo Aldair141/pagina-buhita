@@ -89,6 +89,12 @@
                 @include button($whatsapp,
                 $blanco,
                 #1F9D3D);
+                margin-bottom: .5rem;
+            }
+            .btn-volver {
+                @include button($bordes,
+                $blanco,
+                #A9A9A9);
             }
         }
     }
