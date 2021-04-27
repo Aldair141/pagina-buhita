@@ -21,6 +21,10 @@ function css_detalle() {
     return compilar('scss/detalle/detalle-libro.scss');
 }
 
+function css_regalar_libro() {
+    return compilar('scss/regalo/regalar-libro.scss');
+}
+
 function watchFiles() {
     gulp.watch('scss/shared/*.scss', css_libros);
     gulp.watch('scss/libros_gratis/*.scss', css_libros);
@@ -33,6 +37,10 @@ function watchFiles() {
     gulp.watch('scss/shared/*.scss', css_detalle);
     gulp.watch('scss/detalle/*.scss', css_detalle);
     gulp.watch('scss/*.scss', css_detalle);
+
+    gulp.watch('scss/shared/*.scss', css_regalar_libro);
+    gulp.watch('scss/regalo/*.scss', css_regalar_libro);
+    gulp.watch('scss/*.scss', css_regalar_libro);
 }
 
 gulp.task('watch', gulp.parallel(watchFiles));
