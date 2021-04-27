@@ -25,6 +25,10 @@ function css_regalar_libro() {
     return compilar('scss/regalo/regalar-libro.scss');
 }
 
+function css_regalo() {
+    return compilar('scss/regalo/regalo.scss');
+}
+
 function watchFiles() {
     gulp.watch('scss/shared/*.scss', css_libros);
     gulp.watch('scss/libros_gratis/*.scss', css_libros);
@@ -41,6 +45,10 @@ function watchFiles() {
     gulp.watch('scss/shared/*.scss', css_regalar_libro);
     gulp.watch('scss/regalo/*.scss', css_regalar_libro);
     gulp.watch('scss/*.scss', css_regalar_libro);
+
+    gulp.watch('scss/shared/*.scss', css_regalo);
+    gulp.watch('scss/regalo/*.scss', css_regalo);
+    gulp.watch('scss/*.scss', css_regalo);
 }
 
 gulp.task('watch', gulp.parallel(watchFiles));
