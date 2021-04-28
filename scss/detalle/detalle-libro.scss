@@ -123,3 +123,47 @@
         text-transform: uppercase;
     }
 }
+
+#mostrar-check {
+    display: none;
+    &:checked ~ .modal {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 4000;
+    background: rgba(0, 0, 0, .8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+    .modal-content {
+        /*background: white;
+        width: 96%;
+        height: 96%;
+        border-radius: 5px;
+        @include tablet () {
+            width: 60%;
+            height: 60%;
+        }
+        @include escritorio() {
+            width: 80%;
+            height: 80%;
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;*/
+        width: 96%;
+        height: 96%;
+        overflow-y: auto;
+    }
+}

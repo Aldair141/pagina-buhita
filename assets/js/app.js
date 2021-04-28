@@ -28,5 +28,5 @@ $(document).ready(function() {
 });
 
 setTimeout(() => {
-    $("body").addClass("loaded");
+    $(".body").addClass("loaded");
 }, 100);
