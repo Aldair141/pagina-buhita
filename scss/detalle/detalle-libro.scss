@@ -96,6 +96,12 @@
                 $blanco,
                 #A9A9A9);
             }
+            .btn-leer {
+                @include button(#0044CE,
+                $blanco,
+                #0F1EA8);
+                margin-bottom: .5rem;
+            }
         }
     }
 }

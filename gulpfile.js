@@ -29,6 +29,10 @@ function css_regalo() {
     return compilar('scss/regalo/regalo.scss');
 }
 
+function css_regalo_abierto() {
+    return compilar('scss/regalo/regalo-abierto.scss');
+}
+
 function watchFiles() {
     gulp.watch('scss/shared/*.scss', css_libros);
     gulp.watch('scss/libros_gratis/*.scss', css_libros);
@@ -49,6 +53,10 @@ function watchFiles() {
     gulp.watch('scss/shared/*.scss', css_regalo);
     gulp.watch('scss/regalo/*.scss', css_regalo);
     gulp.watch('scss/*.scss', css_regalo);
+
+    gulp.watch('scss/shared/*.scss', css_regalo_abierto);
+    gulp.watch('scss/regalo/*.scss', css_regalo_abierto);
+    gulp.watch('scss/*.scss', css_regalo_abierto);
 }
 
 gulp.task('watch', gulp.parallel(watchFiles));

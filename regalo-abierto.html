@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>::REGALO::</title>
-    <link rel="stylesheet" href="./assets/css/regalo.css">
+    <title>::REGALO ABIERTO::</title>
+    <link rel="stylesheet" href="./assets/css/regalo-abierto.css">
 </head>
 
 <body>
@@ -38,11 +38,25 @@
         </nav>
     </header>
     <main class="main contenido">
-        <h1 class="title">¡Felicidades, Aldair!</h1>
-        <h2 class="subtitle">Aldair ha elegido un regalo para ti</h2>
-        <img src="./assets/img/otros/caratula-regalo-default.jpg" class="caratula-regalo" alt="Carátula del regalo">
-        <button class="btn-abrir" onclick="window.location = 'regalo-abierto.html';"><i class="fa fa-gift"></i> Abre tu
-            regalo</button>
+        <section class="regalo-descripcion">
+            <h1>¡Felicidades, Aldair!</h1>
+            <p>Aldair te regala el libro</p>
+            <p><strong>"Ama y no sufras"</strong><br>de Walter Riso</p>
+        </section>
+        <section class="regalo-dedicatoria">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse vitae veritatis laborum dolorum reiciendis, minima quia, fugit repudiandae quam dolorem, saepe ducimus. Nulla quibusdam dolore minima nisi, illum suscipit itaque.</p>
+        </section>
+        <section class="regalo-abierto-caratula">
+            <img src="./assets/img/otros/caratula-regalo-abierto.jpg" alt="Ama y no sufras">
+        </section>
+        <section class="regalo-opciones">
+            <button class="btn-ver" onclick="window.location = 'detalle.html';">
+                <i class="fa fa-eye"></i> Ver el libro
+            </button>
+            <button class="btn-biblioteca" onclick="window.location = 'tienda.html';">
+                <i class="fa fa-home"></i> Ir a biblioteca
+            </button>
+        </section>
     </main>
     <footer class="pie">
         <div class="up">

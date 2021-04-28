@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap');
+@import '../variables';
+@import '../mixins';
+@import '../shared/shared';
+.main {
+    margin-top: $margin-top;
+}
+
+.contenido {
+    padding: 30px;
+    @include escritorio() {
+        padding: 100px 30px 30px 30px;
+        max-width: $max-value;
+        margin: 0 auto;
+    }
+}
+
+.regalo-descripcion {
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $negro;
+    }
+    p {
+        text-align: center;
+        font-size: 1.4rem;
+        &:first-of-type {
+            margin-top: 1rem;
+            margin-bottom: .5rem;
+        }
+        &:last-of-type {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid $negro;
+        }
+    }
+}
+
+.regalo-abierto-caratula {
+    @include escritorio() {
+        display: flex;
+        justify-content: center;
+    }
+    img {
+        width: 100%;
+        padding: .4rem;
+        border: 1px solid $bordes;
+        border-radius: 5px;
+        @include escritorio() {
+            width: 900px;
+            height: 450px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
+
+.regalo-dedicatoria {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    p {
+        font-size: 1.1rem;
+        @include escritorio() {
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+    }
+}
+
+.regalo-opciones {
+    @include escritorio() {
+        max-width: 900px;
+        margin: 1.5rem auto;
+    }
+    .btn-ver {
+        @include button($rojo,
+        $blanco,
+        #c82333);
+        i {
+            margin-right: .2rem;
+        }
+        margin-top: .5rem;
+    }
+    .btn-biblioteca {
+        @include button($whatsapp,
+        $blanco,
+        #1F9D3D);
+        i {
+            margin-right: .2rem;
+        }
+        margin-top: .5rem;
+    }
+}
