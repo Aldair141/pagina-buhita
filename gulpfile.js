@@ -2,61 +2,18 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 
-function compilar(ruta) {
-    return gulp.src(ruta)
-        .pipe(autoprefixer())
-        .pipe(sass({ outputStyle: 'compressed' }))
-        .pipe(gulp.dest('assets/css'));
+function compilando () {
+    //Cualquier archivo con esa extensión (agregamos /* para cualquier subcarpeta, /** para los hijos de los hijos )
+    return gulp.src('./scss/**/*.scss')
+    .pipe(autoprefixer({
+        versions: ['last 2 browsers']
+    }))
+    .pipe(sass({ outputStyle: 'expanded' }))
+    .pipe(gulp.dest('./assets/css'));
 }
 
-function css_libros() {
-    return compilar('scss/libros_gratis/libros_gratis.scss');
-}
+gulp.task('compilar', compilando);
 
-function css_tienda() {
-    return compilar('scss/tienda/tienda.scss');
-}
-
-function css_detalle() {
-    return compilar('scss/detalle/detalle-libro.scss');
-}
-
-function css_regalar_libro() {
-    return compilar('scss/regalo/regalar-libro.scss');
-}
-
-function css_regalo() {
-    return compilar('scss/regalo/regalo.scss');
-}
-
-function css_regalo_abierto() {
-    return compilar('scss/regalo/regalo-abierto.scss');
-}
-
-function watchFiles() {
-    gulp.watch('scss/shared/*.scss', css_libros);
-    gulp.watch('scss/libros_gratis/*.scss', css_libros);
-    gulp.watch('scss/*.scss', css_libros);
-
-    gulp.watch('scss/shared/*.scss', css_tienda);
-    gulp.watch('scss/tienda/*.scss', css_tienda);
-    gulp.watch('scss/*.scss', css_tienda);
-
-    gulp.watch('scss/shared/*.scss', css_detalle);
-    gulp.watch('scss/detalle/*.scss', css_detalle);
-    gulp.watch('scss/*.scss', css_detalle);
-
-    gulp.watch('scss/shared/*.scss', css_regalar_libro);
-    gulp.watch('scss/regalo/*.scss', css_regalar_libro);
-    gulp.watch('scss/*.scss', css_regalar_libro);
-
-    gulp.watch('scss/shared/*.scss', css_regalo);
-    gulp.watch('scss/regalo/*.scss', css_regalo);
-    gulp.watch('scss/*.scss', css_regalo);
-
-    gulp.watch('scss/shared/*.scss', css_regalo_abierto);
-    gulp.watch('scss/regalo/*.scss', css_regalo_abierto);
-    gulp.watch('scss/*.scss', css_regalo_abierto);
-}
-
-gulp.task('watch', gulp.parallel(watchFiles));
+gulp.task('default', () => {
+    gulp.watch('./scss/**/*.scss', gulp.parallel(compilando));
+});

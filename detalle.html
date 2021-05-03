@@ -9,7 +9,7 @@
     <!--Librerías-->
     <link rel="stylesheet" href="./assets/libs/owl-carousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="./assets/libs/owl-carousel/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets/css/detalle-libro.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body class="body">
@@ -159,66 +159,16 @@
     </footer>
     <div class="modal">
         <div class="modal-content">
-            <div id="modal-content-pdf"></div>
-            <!-- <iframe class="modal-libro-online" src="assets/docs/ama-y-no-sufras.pdf" frameborder="0"></iframe> -->
+            <div id="modal-content-pdf" class="lector-pdf">
+                <label for="mostrar-check" class="btn-close">X</label>
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./assets/libs/owl-carousel/owl.carousel.min.js"></script>
     <script src="https://use.fontawesome.com/707232b6cb.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.0.943/build/pdf.min.js"></script>
-    
-    <script>
-        var currPage = 1; 
-        var numPages = 0;
-        var thePDF = null;
-        var url = 'assets/docs/ama-y-no-sufras.pdf';
-
-        function handlePages(page) {
-            var canvas = document.createElement("canvas");
-            canvas.width = '800';
-            canvas.style.display = "block";
-            
-            var unscaledViewport = page.getViewport(1);
-            var scale = (canvas.width / unscaledViewport.width);
-            console.log(scale);
-        
-            var viewport = page.getViewport(scale);
-            viewport.width = '821';
-            
-            canvas.height = viewport.height;
-            
-            var context = canvas.getContext('2d');
-
-
-            //Draw it on the canvas
-            page.render({
-                canvasContext: context,
-                viewport: viewport
-            });
-
-            //Add it to the web page
-            document.getElementById('modal-content-pdf').appendChild(canvas);
-
-            //Move to next page
-            currPage++;
-            if (thePDF !== null && currPage <= numPages) {
-                thePDF.getPage(currPage).then(handlePages);
-            }
-        }
-
-            pdfjsLib.getDocument(url).then(function(pdf) {
-
-                //Set PDFJS global object (so we can easily access in our page functions
-                thePDF = pdf;
-
-                //How many pages it has
-                numPages = pdf.numPages;
-
-                //Start with first page
-                pdf.getPage(1).then(handlePages);
-            });
-    </script>
+    <script src="./assets/js/detalle.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>
 
