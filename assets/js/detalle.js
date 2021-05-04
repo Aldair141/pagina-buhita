@@ -1,7 +1,7 @@
 var currPage = 1; 
 var numPages = 0;
 var thePDF = null;
-var url = 'assets/docs/libertad-financiera-16-meses.pdf';
+var url = 'assets/docs/ama-y-no-sufras.pdf';
 
 function handlePages(page) {
     var canvas = document.createElement("canvas");

@@ -42,6 +42,59 @@
     }
 }
 
+@mixin modal($width, $height, $swidth, $sheight) {
+    position: fixed;
+    top: 0;
+    right: -10px;
+    left: -10px;
+    bottom: 0;
+    z-index: 4000;
+    background: rgba(0, 0, 0, .8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+    .modal-content {
+        width: $swidth;
+        height: $sheight;
+        overflow-y: auto;
+
+        @include escritorio() {
+            width: $width;
+            height: $height;
+        }
+    }
+    
+    .modal-header {
+        background: $negro;
+        color: $blanco;
+        height: 4rem;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+        font-weight: bold;
+        .modal-title {
+            font-size: 1.4rem;
+        }
+        .modal-close {
+            label {
+                color: $blanco;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+        background: $blanco;
+    }
+}
+
 @mixin background-image ($url) {
     background: url($url);
     background-repeat: no-repeat;
