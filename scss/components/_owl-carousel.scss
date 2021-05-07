@@ -1,13 +1,32 @@
-.owl-carousel__item img {
-    width: 150px;
-    height: 400px;
-    object-fit: cover;
-    object-position: top center;
-    border: 1px solid $bordes;
-    padding: 4px;
-    box-sizing: border-box;
-    @include escritorio () {
+.owl-carousel__item {
+    img {
+        width: 150px;
         height: 400px;
+        object-fit: cover;
+        object-position: top center;
+        border: 1px solid $bordes;
+        padding: 4px;
+        box-sizing: border-box;
+        margin-bottom: 1rem;
+        @include escritorio () {
+            height: 400px;
+        }
+    }
+    .link {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $negro;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    h3 {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    p {
+        font-size: .8rem;
+        text-align: justify;
     }
 }
 

@@ -1,5 +1,5 @@
 .contenido {
-    padding: 30px;
+    padding: 80px 30px;
     @include escritorio() {
         max-width: $max-value;
         margin: 0 auto;
