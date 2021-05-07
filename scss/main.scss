@@ -1,18 +1,15 @@
 @import './utilities/variables';
 @import './utilities/mixins';
-
 @import './base/normalize';
 @import './base/tipografia';
-
 @import './layout/loading';
 @import './layout/header';
+@import './layout/main';
 @import './layout/footer';
-
 @import './components/banner';
 @import './components/modal';
 @import './components/whatsapp';
 @import './components/owl-carousel';
-
 @import './views/main-libros';
 @import './views/tienda';
 @import './views/detalle-libro';

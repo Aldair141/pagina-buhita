@@ -1,18 +1,7 @@
-.main {
-    margin-top: $margin-top;
-}
-
 .title {
     margin-top: calc(70px + 2rem);
     margin-bottom: 2rem;
     text-align: center;
-}
-
-.contenedor {
-    max-width: $max-value;
-    margin: 0 auto;
-    padding: 30px;
-    border-top: 1px solid $negro;
 }
 
 .buscador {
@@ -70,9 +59,7 @@
             font-size: 85%;
         }
         .btn-detalle {
-            @include button($rojo,
-            $blanco,
-            #c82333);
+            @include button($rojo, $blanco, #c82333);
             i {
                 margin-right: .3rem;
             }

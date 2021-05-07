@@ -1,14 +1,16 @@
 #mostrar-check {
     display: none;
-    &:checked ~ .modal {
+    &:checked~.modal {
         visibility: visible;
         opacity: 1;
     }
 }
 
+
 /*Modal para generar el regalo*/
+
 .modal-regalo {
-    @include modal(600px, 400px, 90%, 400px);
+    @include modal(600px, 400px, 90%, auto);
     .modal-body-title {
         font-size: 2rem;
         padding-bottom: 1rem;
@@ -30,29 +32,25 @@
             margin-right: .2rem;
         }
         .btn-copiar {
-            @include button($rojo,
-            $blanco,
-            #c82333);
+            @include button($rojo, $blanco, #c82333);
             margin-bottom: .2rem;
             font-size: 1rem;
         }
         .btn-ver {
-            @include button($whatsapp,
-            $blanco,
-            #1F9D3D);
+            @include button($whatsapp, $blanco, #1F9D3D);
             margin-bottom: .2rem;
             font-size: 1rem;
         }
         .btn-volver {
-            @include button($bordes,
-            $blanco,
-            #A9A9A9);
+            @include button($bordes, $blanco, #A9A9A9);
             font-size: 1rem;
         }
     }
 }
 
+
 /*Modal para crear el documento PDF*/
+
 .modal-pdf {
     @include modal(96%, 96%, 96%, 96%);
 }

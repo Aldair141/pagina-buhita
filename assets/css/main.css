@@ -223,6 +223,25 @@ html {
   }
 }
 
+.contenido {
+  padding: 30px;
+}
+
+@media only screen and (min-width: 992px) {
+  .contenido {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}
+
+.contenido.line-bottom {
+  border-bottom: 1px solid #000000;
+}
+
+.main {
+  margin-top: 70px;
+}
+
 .pie {
   color: #FFFFFF;
   display: flex;
@@ -384,7 +403,7 @@ html {
 
 .modal-regalo .modal-content {
   width: 90%;
-  height: 400px;
+  height: auto;
   overflow-y: auto;
 }
 
@@ -657,10 +676,6 @@ html {
   opacity: 0;
 }
 
-.main {
-  margin-top: 70px;
-}
-
 .section-title {
   font-size: 28px;
   font-weight: 800;
@@ -670,33 +685,22 @@ html {
   text-transform: uppercase;
 }
 
-.contenido {
-  padding: 60px 30px !important;
-}
-
-@media only screen and (min-width: 992px) {
-  .contenido {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-}
-
-.regalo {
+.section-regalo {
   background: #FDB812;
 }
 
-.regalo .content {
+.section-regalo .content {
   display: flex;
   flex-wrap: wrap;
 }
 
 @media only screen and (min-width: 480px) {
-  .regalo .content {
+  .section-regalo .content {
     justify-content: space-between;
   }
 }
 
-.regalo .content .pasos {
+.section-regalo .content .pasos {
   border: 1px solid #333;
   display: flex;
   flex-direction: column;
@@ -707,29 +711,29 @@ html {
   border-radius: 15px;
 }
 
-.regalo .content .pasos i,
-.regalo .content .pasos h3 {
+.section-regalo .content .pasos i,
+.section-regalo .content .pasos h3 {
   margin-bottom: 20px;
 }
 
-.regalo .content .pasos p {
+.section-regalo .content .pasos p {
   text-align: center;
 }
 
-.regalo .content .pasos:not(:last-child) {
+.section-regalo .content .pasos:not(:last-child) {
   margin-bottom: 20px;
 }
 
 @media only screen and (min-width: 480px) {
-  .regalo .content .pasos {
+  .section-regalo .content .pasos {
     flex: 0 1 calc(50% - 20px);
   }
-  .regalo .content .pasos:last-child {
+  .section-regalo .content .pasos:last-child {
     margin-bottom: 20px;
   }
 }
 
-.regalo .content .section-title {
+.section-regalo .content .section-title {
   flex: 1 1 100%;
 }
 
@@ -795,24 +799,20 @@ html {
 }
 
 .el-libro-del-mes .content div {
-  flex: 0 1 calc(50% - 3rem);
+  margin-bottom: 1.4rem;
 }
 
-.main {
-  margin-top: 70px;
+@media only screen and (min-width: 480px) {
+  .el-libro-del-mes .content div {
+    flex: 0 1 calc(50% - 3rem);
+    margin-bottom: unset;
+  }
 }
 
 .title {
   margin-top: calc(70px + 2rem);
   margin-bottom: 2rem;
   text-align: center;
-}
-
-.contenedor {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 30px;
-  border-top: 1px solid #000000;
 }
 
 .buscador form {
@@ -924,10 +924,6 @@ html {
   margin-bottom: .6rem;
 }
 
-.main {
-  margin-top: 70px;
-}
-
 .titulo-libro {
   text-align: center;
 }
@@ -943,24 +939,15 @@ html {
   margin-bottom: .7rem;
 }
 
-.contenido {
-  padding: 30px !important;
-}
-
-@media only screen and (min-width: 992px) {
-  .contenido {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-}
-
-.contenido:not(:last-child) {
-  border-bottom: 1px solid #000000;
-}
-
 .descripcion {
   display: flex;
   flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 992px) {
+  .descripcion {
+    flex-wrap: nowrap;
+  }
 }
 
 .descripcion .portada {
@@ -992,7 +979,7 @@ html {
 
 @media only screen and (min-width: 480px) {
   .descripcion .portada .caratula {
-    height: 300px;
+    min-height: 300px;
   }
 }
 
@@ -1140,20 +1127,20 @@ html {
   text-transform: uppercase;
 }
 
-.main {
-  margin-top: 70px;
+.regalo-nombre .autor-libro {
+  padding-top: 15px;
+  text-align: center;
 }
 
-.contenido {
-  padding: 25px;
-  border-bottom: 1px solid #ccc;
-}
-
-@media only screen and (min-width: 992px) {
-  .contenido {
-    max-width: 1100px;
-    margin: 0 auto;
+@media only screen and (min-width: 480px) {
+  .regalo-nombre .autor-libro {
+    text-align: unset;
   }
+}
+
+.regalo-mensaje {
+  font-size: 24px;
+  padding: 30px 30px 0px 30px;
 }
 
 .regalo .regalo-caratula {
@@ -1182,7 +1169,13 @@ html {
 }
 
 .regalo .regalo-contenido > div {
-  padding: 1.4rem;
+  padding-bottom: 1.4rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .regalo .regalo-contenido > div {
+    padding: 1.4rem;
+  }
 }
 
 .regalo .regalo-contenido .regalo-portada {
@@ -1194,6 +1187,13 @@ html {
   padding: .4rem;
   border: 1px solid #ccc;
   border-radius: 5px;
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 480px) {
+  .regalo .regalo-contenido .regalo-portada {
+    text-align: center;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -1305,22 +1305,6 @@ html {
   /*background-color: ;
         border-color: #bd2130;*/
   background: #A9A9A9;
-}
-
-.main {
-  margin-top: 70px;
-}
-
-.contenido {
-  padding: 30px;
-}
-
-@media only screen and (min-width: 992px) {
-  .contenido {
-    padding: 100px 30px 30px 30px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
 }
 
 .regalo-descripcion h1 {
@@ -1447,62 +1431,29 @@ html {
   margin-right: .2rem;
 }
 
-.main {
-  margin-top: 70px;
-}
-
-.contenido {
-  padding: 30px;
-}
-
-@media only screen and (min-width: 992px) {
-  .contenido {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 100px 180px 30px 180px;
-  }
-}
-
-.contenido .title {
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.contenido .subtitle {
-  margin-bottom: 1rem;
-  text-align: center;
-  font-weight: 500;
-}
-
-.contenido .btn-abrir {
-  /*background: */
-  background: #FF0000;
-  /*color: */
-  color: #FFFFFF;
-  border: 0;
-  display: flex;
-  width: 100%;
-  height: 40px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-  margin-top: 1rem;
-}
-
-.contenido .btn-abrir:hover {
-  color: #FFFFFF;
-  /*background-color: ;
-        border-color: #bd2130;*/
-  background: #c82333;
-}
-
-.contenido .btn-abrir i {
-  margin-right: .2rem;
-}
-
+/*.contenido {
+    padding: 30px;
+    @include escritorio() {
+        padding: 100px 180px 30px 180px;
+    }
+    .title {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    .subtitle {
+        margin-bottom: 1rem;
+        text-align: center;
+        font-weight: 500;
+    }
+    .btn-abrir {
+        @include button($rojo, $blanco, #c82333);
+        font-size: 1rem;
+        i {
+            margin-right: .2rem;
+        }
+        margin-top: 1rem;
+    }
+}*/
 .caratula-regalo {
   max-width: 100%;
   padding: .4rem;
